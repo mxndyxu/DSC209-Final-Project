@@ -5,17 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="./scatterplot.js"></script>
 </head>
 <body>
     <header>
         <p>DSC 209 · FINAL PROJECT</p>
         <h1>Are More Expensive Games Rated More Highly?</h1>
+        <p>Wending He, Sergio Iribe, Mandy Xu, Jason Yu</p>
     </header>
 
     <main>
         <section>
-            <h2>Chart 1</h2>
-            <div class="chart"></div>
+            <h2>Steam Game Prices vs. Review Scores</h2>
+            <div class="chart">
+                <main class="price-scatterplot">
+                    <p>Pick a genre to filter or a price range to zoom in. Hover over or tap a game for details.</p>
+
+                    <div id="genre-legend" class="chart-controls"
+                        role="group" aria-label="Filter by primary genre"></div>
+
+                    <div id="price-zoom" class="chart-controls"
+                        role="group" aria-label="Zoom to a price range"></div>
+
+                    <p id="scatterplot-status" role="status">Loading games…</p>
+
+                    <svg id="scatterplot" viewBox="0 0 800 480"
+                        role="img" aria-labelledby="scatterplot-title">
+                    </svg>
+
+                    <div id="scatterplot-tooltip" class="scatterplot-tooltip" hidden>
+                    <strong id="tooltip-name"></strong>
+                    <div id="tooltip-genre"></div>
+                    <div id="tooltip-price"></div>
+                    <div id="tooltip-score"></div>
+                    <div id="tooltip-reviews"></div>
+                    </div>
+                </main>
+            </div>
         </section>
         <section>
             <h2>Chart 2</h2>
